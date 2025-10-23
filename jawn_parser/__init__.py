@@ -4,9 +4,9 @@ import argparse
 import xml.etree.ElementTree as ET
 import re
 from bs4 import BeautifulSoup
-from jawn_parser import analyzer
-from jawn_parser import database
-from jawn_parser import excel
+from jawn_parser.analyzer import analyze_files
+from jawn_parser.database import create_db, create_dbtable, insert_dbtable
+from jawn_parser.excel import create_xlworkbook, create_xltable, create_xlsheet
 
 
 def jawn_parser(client_name, include_info, files):
@@ -412,7 +412,7 @@ def main():
     / / /_/ /| |/ |/ / / / /     / /_/ / /_/ / /  (__  )  __/ /    
  __/ /\\__,_/ |__/|__/_/ /_/_____/ .___/\\__,_/_/  /____/\\___/_/     
 /___/                    /_____/_/                                                              
-                            v1.0.3
+                            v1.0.4
     """)
     # Set up CLI arguments
     arguments = argparse.ArgumentParser(prog='jawn_parser',
